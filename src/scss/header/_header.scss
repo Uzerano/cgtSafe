@@ -1,0 +1,87 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.notwebp.notavif .header__fondo {
+  background-image: linear-gradient(
+      to bottom,
+      transparentize(v.$blanco, 0.8%) 0%,
+      transparentize(v.$primario, 0.2%) 100%
+    ),
+    url(../img/mani_1.jpg);
+}
+
+.webp .header__fondo {
+  background-image: linear-gradient(
+      to bottom,
+      transparentize(v.$blanco, 0.8%) 0%,
+      transparentize(v.$primario, 0.2%) 100%
+    ),
+    url(../img/mani_1.webp);
+}
+
+.avif .header__fondo {
+  background-image: linear-gradient(
+      to bottom,
+      transparentize(v.$blanco, 0.8%) 0%,
+      transparentize(v.$primario, 0.2%) 100%
+    ),
+    url(../img/mani_1.avif);
+}
+
+.header {
+  &__fondo {
+    padding: 2rem 2rem 10rem 2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top, 100%;
+  }
+
+  &__barra {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(
+      to right,
+      transparentize(v.$primario, 0) 0%,
+      transparentize(v.$negro, 0) 80%
+    );
+    padding: 2rem 0;
+    @include m.tablet {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  &__logo {
+    width: 10rem;
+  }
+
+  &__contenido {
+    text-align: center;
+  }
+
+  &__titulo {
+    color: v.$blanco;
+    font-size: 3rem;
+    @include m.telefono {
+      text-align: center;
+      font-size: 4rem;
+    }
+    @include m.tablet {
+      text-align: left;
+      font-size: 5rem;
+    }
+  }
+
+  &__descripcion {
+    color: v.$blanco;
+    @include m.titulo(true);
+    color: v.$blanco;
+    font-size: 3.5rem;
+    @include m.tablet {
+      font-size: 6rem;
+      text-align: center;
+    }
+  }
+}

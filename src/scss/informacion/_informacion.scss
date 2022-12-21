@@ -1,0 +1,31 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.informacion {
+    background-color: v.$gris;
+     padding: 5rem;
+
+     &__titulo {
+      text-align: center;
+      margin-bottom: 4rem;
+     }
+     
+  &__descargas {
+    @include m.grid(1, 2rem);
+    @include m.tablet {
+      @include m.grid(3, 4rem);
+    }
+  }
+  &__descarga {
+        display: flex;
+        align-items: center;
+       
+  }
+
+  &__icono {
+    width: 5rem;
+    height: 5rem;
+    padding: 0 1rem;
+    color: #fd3131;
+  }
+}

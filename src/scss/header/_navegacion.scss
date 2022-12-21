@@ -1,0 +1,34 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.navegacion {
+ 
+    background-color: lighten(v.$negro, 15%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    @include m.tablet {
+      flex-direction: row;
+      justify-content: space-around;
+    
+  }
+
+  &__enlace {
+    font-family: v.$fuenteSecundaria;
+    color: v.$blanco;
+    font-size: 2rem;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    display: inline-block;
+    @include m.tablet {
+      &:hover {
+        color: darken(v.$blanco, 15%);
+        transform: scale(1.2);
+        text-decoration: underline;
+        color: lighten(#ff0000, 20%);
+      }
+    }
+  }
+}
